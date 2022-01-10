@@ -19,6 +19,6 @@ def test_train():
     train_loss = history["l"]
     assert train_loss[0] > train_loss[1], "loss not decreasing from epoch 0 to epoch 1"
 
-    tr_or_ev.plot_train(history)
+    # tr_or_ev.plot_train(history)
     res = tr_or_ev.evaluate()
     assert res is None
