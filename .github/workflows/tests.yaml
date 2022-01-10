@@ -41,3 +41,9 @@ jobs:
       - name: Test with pytest
         run: |
           pytest tests/
+      - name: Generate Report
+        run: |
+          pip install coverage
+          coverage report -m unittest
+      - name: Upload Coverage to Codecov
+        uses: codecov/codecov-action@v1
