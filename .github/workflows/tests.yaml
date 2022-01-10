@@ -15,7 +15,12 @@ defaults:
 jobs:
   test-code:
 
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        include:
+          os: macos-latest
+          os: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v2
