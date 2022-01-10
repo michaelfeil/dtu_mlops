@@ -6,7 +6,11 @@ import pytest
 mnist_n_train_samples = [25000, 40000, 60000] # three common sizes
 
 mnist_files = os.path.join(get_project_root(),"data", "raw", "corruptmnist")
-@pytest.mark.skipif(not os.listdir(mnist_files), reason="Data Mnist files not found")
+if os.path.exists(mnist_files):
+    mnist_files = os.listdir(mnist_files)
+else:
+    mnist_files = False
+@pytest.mark.skipif(not mnist_files, reason="Data Mnist files not found")
 def test_data_utils_mnist():
     """asserts porperties of the Mnist dataset"""
     (trainX, trainY), (testX, testY) = mnist()
@@ -17,7 +21,7 @@ def test_data_utils_mnist():
     assert trainY.shape[1:] == testY.shape[1:], "difference in train and test shape"
     return
 
-@pytest.mark.skipif(not os.path.join(get_project_root(),"data", "processed", "mnist.pt"), reason="Data Mnist processed files not found")
+@pytest.mark.skipif(not os.path.exists(os.path.join(get_project_root(),"data", "processed", "mnist.pt")), reason="Data Mnist processed files not found")
 def test_data_utils_mnist():
     """asserts porperties of the Mnist dataset"""
     (trainX, trainY), (testX, testY) = retrieve_mnist()
