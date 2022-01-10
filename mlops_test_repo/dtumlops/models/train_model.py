@@ -5,8 +5,8 @@ from pathlib import Path
 import matplotlib.pyplot as plt
 import torch
 import torch.nn as nn
-from model import MyAwesomeModel
-from src.data.data_utils import CustomTensorDataset, retrieve_mnist
+from dtumlops.models.model import MyAwesomeModel
+from dtumlops.data.data_utils import CustomTensorDataset, retrieve_mnist
 
 class TrainOREvaluate(object):
     """Helper class that will help launch class methods as commands
@@ -105,7 +105,6 @@ class TrainOREvaluate(object):
 
 
 if __name__ == "__main__":
-
     te = TrainOREvaluate()
     history = te.train()
     te.plot_train(history)

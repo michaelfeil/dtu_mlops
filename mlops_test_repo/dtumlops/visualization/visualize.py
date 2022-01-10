@@ -4,8 +4,8 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import torch
 from sklearn.manifold import TSNE
-from src.data.data_utils import retrieve_mnist
-from src.models.model import MyAwesomeModel
+from dtumlops.data.data_utils import retrieve_mnist
+from dtumlops.models.model import MyAwesomeModel
 
 features = {}
 

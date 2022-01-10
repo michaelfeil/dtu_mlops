@@ -42,7 +42,7 @@ def mnist():
     data_folder = os.path.join(
         curr_path.parent.parent.parent.parent, "data", "corruptmnist"
     )
-    load_mnist(data_folder)
+    return load_mnist(data_folder)
 
 
 def load_mnist(data_folder):

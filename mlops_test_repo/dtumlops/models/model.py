@@ -12,7 +12,10 @@ class MyAwesomeModel(nn.Module):
         self.fc1 = nn.Linear(1024, 10)
 
     def forward(self, x):
-
+        if x.ndim != 4:
+            raise ValueError('Expected input to a 4D tensor')
+        if x.shape[1] != 1 or x.shape[2] != 28 or x.shape[3] != 28:
+            raise ValueError(f'Expected each sample to have shape [1, 28, 28] but have {x.shape}')
         x = F.relu(self.conv1(x))
         x = F.relu(self.conv2(x))
         x = F.relu(self.conv3(x))
