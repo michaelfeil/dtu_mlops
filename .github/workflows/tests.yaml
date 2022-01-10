@@ -42,6 +42,7 @@ jobs:
         run: |
           pytest tests/
       - name: Isort
+        run: |
           isort --profile black .
       - name: Generate Report
         run: |
