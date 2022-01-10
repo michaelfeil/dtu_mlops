@@ -47,7 +47,7 @@ jobs:
       - name: Generate Report
         run: |
           pip install coverage
-          coverage run -m
+          coverage run -m pytest tests
           coverage xml
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v2

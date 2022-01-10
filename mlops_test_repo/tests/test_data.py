@@ -34,9 +34,9 @@ def test_data_utils_mnist():
     ),
     reason="Data Mnist processed files not found",
 )
-def test_data_utils_retriebve_mnist():
+def test_data_utils_retrieve_mnist():
     """asserts porperties of the Mnist dataset"""
-    (trainX, trainY), (testX, testY) = retrieve_mnist()
+    (trainX, trainY, testX, testY) = retrieve_mnist()
     assert trainX.shape[0] == trainY.shape[0], "X_train and Y_train lenght differs"
     assert (
         trainX.shape[0] in mnist_n_train_samples
