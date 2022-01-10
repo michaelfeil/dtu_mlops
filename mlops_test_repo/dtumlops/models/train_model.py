@@ -5,8 +5,9 @@ from pathlib import Path
 import matplotlib.pyplot as plt
 import torch
 import torch.nn as nn
-from dtumlops.models.model import MyAwesomeModel
+
 from dtumlops.data.data_utils import CustomTensorDataset, retrieve_mnist
+from dtumlops.models.model import MyAwesomeModel
 
 
 class TrainOREvaluate(object):

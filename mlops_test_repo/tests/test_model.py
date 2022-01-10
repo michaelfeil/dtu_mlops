@@ -1,6 +1,7 @@
 import pytest
-from dtumlops.models.model import MyAwesomeModel
 import torch
+
+from dtumlops.models.model import MyAwesomeModel
 
 
 def test_error_on_wrong_shape():

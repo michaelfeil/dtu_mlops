@@ -14,3 +14,6 @@ torch
 scikit-learn
 matplotlib
 seaborn
+
+# testing
+pre-commit

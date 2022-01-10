@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import torch
 from sklearn.manifold import TSNE
+
 from dtumlops.data.data_utils import retrieve_mnist
 from dtumlops.models.model import MyAwesomeModel
 
@@ -19,10 +20,7 @@ class VisCNNFeatures:
 
         return hook
 
-    def visualize_cnn_features(
-        self,
-        experiment_folder=""
-    ):
+    def visualize_cnn_features(self, experiment_folder=""):
         """
         load model and visualize CNN feautres with T-SNE
 

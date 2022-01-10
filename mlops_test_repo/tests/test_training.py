@@ -1,6 +1,8 @@
-from dtumlops.models.train_model import TrainOREvaluate
-import pytest
 import os
+
+import pytest
+
+from dtumlops.models.train_model import TrainOREvaluate
 from dtumlops.utils import get_project_root
 
 mnist_files = os.path.join(get_project_root(), "data", "raw", "corruptmnist")

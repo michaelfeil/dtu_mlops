@@ -1,7 +1,9 @@
+import os
+
+import pytest
+
 from dtumlops.data.data_utils import mnist, retrieve_mnist
 from dtumlops.utils import get_project_root
-import os
-import pytest
 
 mnist_n_train_samples = [25000, 40000, 60000]  # three common sizes
 

@@ -13,6 +13,7 @@
 
 import os
 import sys
+
 os.path, sys.path
 
 # If extensions (or modules to document with autodoc) are in another directory,
