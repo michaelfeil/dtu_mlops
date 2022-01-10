@@ -9,8 +9,7 @@ from dtumlops.data.data_utils import retrieve_mnist
 from dtumlops.models.model import MyAwesomeModel
 
 features = {}
-
-
+a = 0
 class VisCNNFeatures:
     def get_features(self, name):
         """HELPER FUNCTION FOR FEATURE EXTRACTION"""
