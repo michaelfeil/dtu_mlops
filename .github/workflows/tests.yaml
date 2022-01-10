@@ -45,5 +45,6 @@ jobs:
         run: |
           pip install coverage
           coverage report -m unittest
-      - name: Upload Coverage to Codecov
-        uses: codecov/codecov-action@v1
+          coverage xml
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v2
