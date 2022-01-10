@@ -8,6 +8,7 @@ import torch.nn as nn
 from dtumlops.models.model import MyAwesomeModel
 from dtumlops.data.data_utils import CustomTensorDataset, retrieve_mnist
 
+
 class TrainOREvaluate(object):
     """Helper class that will help launch class methods as commands
     from a single script

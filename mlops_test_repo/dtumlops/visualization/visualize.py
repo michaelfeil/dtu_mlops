@@ -21,13 +21,13 @@ class VisCNNFeatures:
 
     def visualize_cnn_features(
         self,
-        experiment_folder="/home/michi/dtu_mlops/s2_organisation_and_version_control/exercise_files/mlops_test_repo/models/mnist-experiment_1641392205",
+        experiment_folder=""
     ):
         """
         load model and visualize CNN feautres with T-SNE
-        
+
         Params:
-            experiment_folder (str): folder which contrains a cnn.pth model file 
+            experiment_folder (str): folder which contrains a cnn.pth model file
                 default ".../mnist-experiment_1641392205"
         """
 
