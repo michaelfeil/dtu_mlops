@@ -1,6 +1,12 @@
 from dtumlops.models.train_model import TrainOREvaluate
 import pytest
 
+mnist_files = os.path.join(get_project_root(),"data", "raw", "corruptmnist")
+if os.path.exists(mnist_files):
+    mnist_files = os.listdir(mnist_files)
+else:
+    mnist_files = False
+@pytest.mark.skipif(not mnist_files, reason="Data Mnist files not found")
 def test_train():
     tr_or_ev = TrainOREvaluate()
     history = tr_or_ev.train(epochs=2)
