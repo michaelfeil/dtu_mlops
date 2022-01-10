@@ -1,0 +1,18 @@
+wandb_version: 1
+
+dataset_path:
+  value: ~/datasets
+hidden_dim:
+  value: 99
+latent_dim:
+  value: 20
+learning_rate:
+  value: 0.04773071993927384
+log2_batch_size:
+  value: 2
+n_epochs:
+  value: 2202242
+seed:
+  value: 123
+x_dim:
+  value: 784

@@ -1,0 +1,33 @@
+{
+    "os": "Linux-5.10.16.3-microsoft-standard-WSL2-x86_64-with-glibc2.31",
+    "python": "3.9.7",
+    "heartbeatAt": "2022-01-07T08:41:41.043297",
+    "startedAt": "2022-01-07T08:41:38.766890",
+    "docker": null,
+    "gpu": "NVIDIA GeForce RTX 3060 Laptop GPU",
+    "gpu_count": 1,
+    "cpu_count": 16,
+    "cuda": null,
+    "args": [
+        "--dataset_path=~/datasets",
+        "--hidden_dim=400",
+        "--latent_dim=20",
+        "--learning_rate=0.00204870406985987",
+        "--log2_batch_size=5",
+        "--n_epochs=8",
+        "--seed=123",
+        "--x_dim=784"
+    ],
+    "state": "running",
+    "program": "/home/michi/dtu_mlops/s4_debugging_and_logging/wandb_vae/vae_mnist.py",
+    "codePath": "s4_debugging_and_logging/wandb_vae/vae_mnist.py",
+    "git": {
+        "remote": "https://github.com/michaelfeil/dtu_mlops.git",
+        "commit": "4783d44d93c45404b344032728e8a9972bedf4f5"
+    },
+    "email": "michaelfeil@example.com",
+    "root": "/home/michi/dtu_mlops",
+    "host": "lenovo-michi",
+    "username": "michi",
+    "executable": "/home/michi/anaconda3/envs/mlops_1/bin/python"
+}

@@ -7,7 +7,7 @@ A simple implementation of Gaussian MLP Encoder and Decoder trained on MNIST
 import torch
 import torch.nn as nn
 import torchvision.transforms as transforms
-from torch.utils.data import DataLoader
+from torch.utils.data import DataLoader, TensorDataset
 from torchvision.datasets import MNIST
 from torchvision.utils import save_image
 
@@ -33,9 +33,27 @@ test_dataset = MNIST(
     dataset_path, transform=mnist_transform, train=False, download=True
 )
 
+train_dataset_new = TensorDataset(
+    train_dataset.data.clone().detach().to(torch.float32), 
+    train_dataset.targets.clone().detach()
+)
+
+# test_dataset = TensorDataset(
+#     test_dataset.data.clone().detach().unsqueeze(1), 
+#     test_dataset.targets.clone().detach()
+# )
+
+
 train_loader = DataLoader(dataset=train_dataset, batch_size=batch_size, shuffle=True)
 test_loader = DataLoader(dataset=test_dataset, batch_size=batch_size, shuffle=False)
 
+train_loader_new = DataLoader(dataset=train_dataset_new, batch_size=batch_size, shuffle=True)
+
+x1 = next(iter(train_loader_new))
+x2 = next(iter(train_loader))
+
+torch.equal(x1[0], x2[0])
+torch.equal(x1[1], x2[1])
 
 class Encoder(nn.Module):
     def __init__(self, input_dim, hidden_dim, latent_dim):
@@ -117,7 +135,7 @@ print("Start training VAE...")
 model.train()
 for epoch in range(epochs):
     overall_loss = 0
-    for batch_idx, (x, _) in enumerate(train_loader):
+    for batch_idx, (x, _) in enumerate(train_loader_new):
         x = x.view(batch_size, x_dim)
         x = x.to(DEVICE)
 

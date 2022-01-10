@@ -26,7 +26,7 @@ class Encoder(nn.Module):
         mean,
         var,
     ):
-        epsilon = torch.rand_like(var)
+        epsilon = torch.randn_like(var)
         
 
         z = mean + var * epsilon

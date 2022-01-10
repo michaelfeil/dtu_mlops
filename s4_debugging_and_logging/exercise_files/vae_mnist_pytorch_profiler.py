@@ -12,7 +12,7 @@ from torchvision.datasets import MNIST
 from torchvision.utils import save_image
 
 # Model Hyperparameters
-dataset_path = "datasets"
+dataset_path = "~/datasets"
 cuda = False
 DEVICE = torch.device("cuda" if cuda else "cpu")
 batch_size = 100
@@ -61,7 +61,7 @@ class Encoder(nn.Module):
         mean,
         var,
     ):
-        epsilon = torch.rand_like(var)
+        epsilon = torch.randn_like(var)
 
         z = mean + var * epsilon
 

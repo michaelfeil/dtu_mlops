@@ -76,13 +76,15 @@ for epoch in range(epochs):
 
         loss.backward()
         optimizer.step()
+    avg_loss = overall_loss / (batch_idx * batch_size)
     print(
         "\tEpoch",
         epoch + 1,
         "complete!",
         "\tAverage Loss: ",
-        overall_loss / (batch_idx * batch_size),
+        avg_loss,
     )
+    wandb.log({"train_loss": avg_loss})
 print("Finish!!")
 
 # save weights
