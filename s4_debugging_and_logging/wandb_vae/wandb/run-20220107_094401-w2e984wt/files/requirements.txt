@@ -102,7 +102,7 @@ patsy==0.5.2
 pexpect==4.8.0
 phonenumbers==8.12.40
 pickleshare==0.7.5
-pillow==8.4.0
+pillow==9.0.1
 pip==21.3.1
 pipreqs==0.4.11
 platformdirs==2.4.1
